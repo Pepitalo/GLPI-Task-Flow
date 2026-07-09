@@ -45,7 +45,7 @@ function plugin_taskflow_formanswer_add($formanswer) {
     global $DB;
 
     $formanswer_id = $formanswer->getID();
-    Toolbox::logInFile('taskflow', 'formanswer cree, id = ' . $formanswer_id . "\n");
+    //Toolbox::logInFile('taskflow', 'formanswer cree, id = ' . $formanswer_id . "\n");
 
     $link = $DB->request([
         'FROM'  => 'glpi_items_tickets',
@@ -97,7 +97,7 @@ function plugin_taskflow_formanswer_add($formanswer) {
             ])->current();
 
             if (!$mapping) {
-                Toolbox::logInFile('taskflow', 'Aucun message configure pour la case "' . $case . '" (formulaire id=' . $config['id'] . ")\n");
+                //Toolbox::logInFile('taskflow', 'Aucun message configure pour la case "' . $case . '" (formulaire id=' . $config['id'] . ")\n");
                 continue;
             }
 
