@@ -3,7 +3,7 @@ if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access this file directly");
 }
 
-class PluginTaskFlowForm extends CommonDBTM {
+class PluginTaskflowForm extends CommonDBTM {
 
     public static $rightname = 'config';
 
