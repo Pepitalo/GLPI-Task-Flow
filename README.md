@@ -1,6 +1,6 @@
 # GLPI-Task-Flow
 GLPI Plugin that allows the creation of a list of task to be sent depending on the answers of a form in a ticket. Allows for parametrized and customisable responses 
-Please note that this current version only supports answers from checkboxes, this will be improved soon. This plugin also relies on the presence of FormsCreator
+Please note that this current version only supports answers from checkboxes, this will be improved soon. This plugin also relies on the presence of FormsCreator.
 
  ## How to use
  To set up a parametrized response, take the question ID from formscreator which can be found in your form's target ticket, name your parametrized response to that question and click "Ajouter". Then add in a response for each answer you want.
