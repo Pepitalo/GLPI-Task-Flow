@@ -3,7 +3,7 @@ include('../../../inc/includes.php');
 
 Session::checkRight('config', READ);
 
-$item = new PluginTaskFlowForm();
+$item = new PluginTaskflowForm();
 
 if (isset($_POST['update'])) {
     Session::checkRight('config', UPDATE);
@@ -11,7 +11,7 @@ if (isset($_POST['update'])) {
     Html::back();
 }
 
-Html::header(PluginTaskFlowForm::getTypeName(1), $_SERVER['PHP_SELF'], 'config', 'plugins');
+Html::header(PluginTaskflowForm::getTypeName(1), $_SERVER['PHP_SELF'], 'config', 'plugins');
 
 $item->display(['id' => $_GET['id'] ?? 0]);
 

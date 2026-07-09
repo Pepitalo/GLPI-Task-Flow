@@ -11,8 +11,8 @@ function plugin_init_taskflow() {
  
     $PLUGIN_HOOKS['config_page']['taskflow'] = 'front/form.php';
  
-    Plugin::registerClass('PluginTaskFlowForm');
-    Plugin::registerClass('PluginTaskFlowCheckbox');
+    Plugin::registerClass('PluginTaskflowForm');
+    Plugin::registerClass('PluginTaskflowCheckbox');
 }
  
 function plugin_version_taskflow() {

@@ -3,12 +3,12 @@ include('../../../inc/includes.php');
 
 Session::checkRight('config', READ);
 
-Html::header(PluginTaskFlowForm::getTypeName(2), $_SERVER['PHP_SELF'], 'config', 'plugins');
+Html::header(PluginTaskflowForm::getTypeName(2), $_SERVER['PHP_SELF'], 'config', 'plugins');
 
 // Suppression
 if (isset($_GET['delete'])) {
     Session::checkRight('config', UPDATE);
-    $form = new PluginTaskFlowForm();
+    $form = new PluginTaskflowForm();
     $form->delete(['id' => $_GET['delete']]);
     Html::redirect($_SERVER['PHP_SELF']);
 }
@@ -16,7 +16,7 @@ if (isset($_GET['delete'])) {
 // Ajout
 if (isset($_POST['add'])) {
     Session::checkRight('config', UPDATE);
-    $form = new PluginTaskFlowForm();
+    $form = new PluginTaskflowForm();
     $form->add($_POST);
     Html::redirect($_SERVER['PHP_SELF']);
 }
@@ -25,9 +25,9 @@ if (isset($_POST['add'])) {
 if (isset($_GET['duplicate'])) {
     Session::checkRight('config', UPDATE);
 
-    $source = new PluginTaskFlowForm();
+    $source = new PluginTaskflowForm();
     if ($source->getFromDB($_GET['duplicate'])) {
-        $new_form = new PluginTaskFlowForm();
+        $new_form = new PluginTaskflowForm();
         $new_id = $new_form->add([
             'name'                            => $source->fields['name'] . ' (copie)',
             'plugin_formcreator_questions_id' => $source->fields['plugin_formcreator_questions_id'],
@@ -41,7 +41,7 @@ if (isset($_GET['duplicate'])) {
                 'WHERE' => ['plugin_taskflow_forms_id' => $_GET['duplicate']],
             ]);
             foreach ($iterator as $row) {
-                $checkbox = new PluginTaskFlowCheckbox();
+                $checkbox = new PluginTaskflowCheckbox();
                 $checkbox->add([
                     'plugin_taskflow_forms_id' => $new_id,
                     'value'                    => $row['value'],

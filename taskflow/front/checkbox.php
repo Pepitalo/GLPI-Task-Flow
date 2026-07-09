@@ -5,17 +5,17 @@ Session::checkRight('config', READ);
 
 $forms_id = (int) ($_GET['plugin_taskflow_forms_id'] ?? 0);
 
-$parent = new PluginTaskFlowForm();
+$parent = new PluginTaskflowForm();
 if (!$forms_id || !$parent->getFromDB($forms_id)) {
     Html::displayNotFoundError();
 }
 
-Html::header(PluginTaskFlowCheckbox::getTypeName(2), $_SERVER['PHP_SELF'], 'config', 'plugins');
+Html::header(PluginTaskflowCheckbox::getTypeName(2), $_SERVER['PHP_SELF'], 'config', 'plugins');
 
 // Suppression
 if (isset($_GET['delete'])) {
     Session::checkRight('config', UPDATE);
-    $checkbox = new PluginTaskFlowCheckbox();
+    $checkbox = new PluginTaskflowCheckbox();
     $checkbox->delete(['id' => $_GET['delete']]);
     Html::redirect($_SERVER['PHP_SELF'] . '?plugin_taskflow_forms_id=' . $forms_id);
 }
@@ -23,7 +23,7 @@ if (isset($_GET['delete'])) {
 // Ajout
 if (isset($_POST['add'])) {
     Session::checkRight('config', UPDATE);
-    $checkbox = new PluginTaskFlowCheckbox();
+    $checkbox = new PluginTaskflowCheckbox();
     $_POST['plugin_taskflow_forms_id'] = $forms_id;
     $checkbox->add($_POST);
     Html::redirect($_SERVER['PHP_SELF'] . '?plugin_taskflow_forms_id=' . $forms_id);
