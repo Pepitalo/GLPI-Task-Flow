@@ -9,7 +9,7 @@ function plugin_init_taskflow() {
         'PluginFormcreatorFormAnswer' => 'plugin_taskflow_formanswer_add'
     ];
  
-    $PLUGIN_HOOKS['config_page']['taskflow'] = 'front/form.php';
+    $PLUGIN_HOOKS['config_page']['taskflow'] = 'front/config.php';
  
     Plugin::registerClass('PluginTaskflowForm');
     Plugin::registerClass('PluginTaskflowCheckbox');
