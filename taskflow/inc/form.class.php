@@ -20,7 +20,7 @@ class PluginTaskflowForm extends CommonDBTM {
         echo "<td>";
         Html::autocompletionTextField($this, 'name');
         echo "</td>";
-        echo "<td>" . __('ID de la question Formcreator (cases à cocher)', 'taskflow') . "</td>";
+        echo "<td>" . __('ID de la question Formcreator', 'taskflow') . "</td>";
         echo "<td>";
         Html::autocompletionTextField($this, 'plugin_formcreator_questions_id');
         echo "</td>";

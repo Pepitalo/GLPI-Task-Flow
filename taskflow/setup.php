@@ -1,20 +1,20 @@
 <?php
-define('PLUGIN_TASKFLOW_VERSION', '1.0.0');
- 
+define('PLUGIN_TASKFLOW_VERSION', '1.5.0');
+
 function plugin_init_taskflow() {
     global $PLUGIN_HOOKS;
     $PLUGIN_HOOKS['csrf_compliant']['taskflow'] = true;
- 
+
     $PLUGIN_HOOKS['item_add']['taskflow'] = [
         'PluginFormcreatorFormAnswer' => 'plugin_taskflow_formanswer_add'
     ];
- 
-    $PLUGIN_HOOKS['config_page']['taskflow'] = 'front/form.php';
- 
+
+    $PLUGIN_HOOKS['config_page']['taskflow'] = 'front/config.php';
+
     Plugin::registerClass('PluginTaskflowForm');
     Plugin::registerClass('PluginTaskflowCheckbox');
 }
- 
+
 function plugin_version_taskflow() {
     return [
         'name'         => 'TaskFlow',
@@ -26,7 +26,6 @@ function plugin_version_taskflow() {
         ],
     ];
 }
- 
+
 function plugin_taskflow_check_prerequisites() { return true; }
 function plugin_taskflow_check_config($verbose = false) { return true; }
- 
